@@ -1,0 +1,108 @@
+ul {
+position: relative;
+    display: flex;
+    gap: 25px;
+    align-items: baseline;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+
+}
+
+ul li {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  background: #67e5e0;
+  box-shadow: 0 10px 25px rgb(0, 0, 0, 0.1);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+ul li:hover {
+  width: 180px;
+  box-shadow: 0 10px 25px rgb(0, 0, 0, 0);
+}
+
+ul li::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  border-radius: 60px;
+  transition: 0.5s;
+  background: linear-gradient(45deg, var(--i), var(--j));
+}
+
+ul li:hover::before {
+  opacity: 1;
+}
+
+ul li::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 60px;
+  opacity: 0;
+  transition: 0.5s;
+  background: linear-gradient(45deg, var(--i), var(--j));
+  filter: blur(15px);
+  z-index: -1;
+}
+
+ul li:hover::after {
+  opacity: 0.5;
+}
+
+ul li ion-icon {
+  color: #777;
+  font-size: 1.75em;
+  transition: 0.5s;
+  transition-delay: 0.25s;
+}
+
+ul li:hover ion-icon {
+  color: #dc7e7e;
+  font-size: 1.75em;
+  transform: scale(0);
+  transition-delay: 0s;
+}
+
+ul li span {
+  position: absolute;
+}
+
+ul li .title {
+  color: #67e5e0;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transform: scale(0);
+  transition: 0.5s;
+  transition-delay: 0s;
+}
+
+ul li:hover .title {
+  transform: scale(0.8);
+  transition-delay: 0.25s;
+}
+
+.center {
+  margin: auto;
+  width: 60%;
+  border: 3px solid #000000;
+  padding: 10px;
+}
+body{
+  background-image: linear-gradient(to top, #67e5e0,white);
+  height:auto;
+}
+
