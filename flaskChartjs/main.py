@@ -26,7 +26,7 @@ def confirmed_cases(day):
    # pred_y= Lin.predict(testing_x)
 
     for i in range(1,15):
-        end_date= (datetime.now() + timedelta(days=i) ).strftime('%Y-%m-%d')
+        end_date= ((datetime.now()+timedelta(day)) + timedelta(days=i) ).strftime('%Y-%m-%d')
         C_cases=Lin.predict([[40+day+i]])
         conf_cases=math.trunc(C_cases[0][0])
         label.append(end_date)
@@ -48,7 +48,7 @@ def Recovered_cases(day):
     Lin.fit(training_x,training_y)
     pred_y= Lin.predict(testing_x)
     for i in range(1, 15):
-        end_date = (datetime.now() + timedelta(days=i)).strftime('%Y-%m-%d')
+        end_date = ((datetime.now()+timedelta(day)) + timedelta(days=i)).strftime('%Y-%m-%d')
         recovered_cases = Lin.predict([[40 + day + i]])
         rec_cases = math.trunc(recovered_cases[0][0])
         label_rec.append(end_date)
@@ -78,7 +78,7 @@ def death_cases(day):
 
     pred_y= Lin.predict(testing_x)
     for i in range(1, 15):
-        end_date = (datetime.now() + timedelta(days=i)).strftime('%Y-%m-%d')
+        end_date = ((datetime.now()+timedelta(day)) + timedelta(days=i)).strftime('%Y-%m-%d')
         death_predict = Lin.predict([[40 + day + i]])
         death_pred = math.trunc(death_predict[0][0])
         label_det.append(end_date)
@@ -87,3 +87,4 @@ def death_cases(day):
 
 #ac=r2_score(testing_y,pred_y)*100
 #print("accuracy death cases using training set =%.2f"%ac)
+
