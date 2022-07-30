@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Chart.js Example</title>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+   <link rel= "stylesheet" type= "text/css" href= "../static/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script>
+    var jinjaLabels = '{{ labels| tojson }}';
+    var jinjaValues = '{{ values| tojson }}';
+    var jinjaLegend = '{{ legend }}';
+    var jinjaLabels1 = '{{ label_rec| tojson }}';
+    var jinjaValues1 = '{{ values_rec| tojson }}';
+    var jinjaLegand1 = '{{  legend }}';
+    var jinjaLabels2 = '{{ label_det| tojson }}';
+    var jinjaValues2 = '{{ values_det| tojson }}';
+    var jinjaLegand2 = '{{  legend }}';
+  </script>
+</head>
+
+<body >
+  <h1 style="text-align: center">COVID prediction using ML</h1>
+
+  <!-- bar chart canvas element
+<form method="POST" action="">
+	<input type="text" name="date">
+	<input type="submit" value="Send">
+</form>
+-->
+  <div class="btn-group" style="width:100%">
+      <button style="width:50%"><a href="/"> TODAY's PREDICTION</a></button>
+      <button style="width:50%"><a href="/predict">PREDICTION FUTURE</a></button>
+</div>
+
+
+
+
+
+    <h2 style="text-align: center" >This is recovered cases graph for next 15 days</h2>
+    <canvas id="con" width="600" height="400" class="center" ></canvas>
+      <p id="caption" style="text-align: center">The chart is displaying a 15 days</p>
+  <h2 style="text-align: center">This is confirmed cases graph for next 15 days </h2>
+  <canvas id="myChart" width="600" height="400" class="center" ></canvas>
+  <h2 style="text-align: center">This is diseased cases graph for next 15 days </h2>
+  <canvas id="det" width="600" height="400" class="center" ></canvas>
+
+</body>
+
+<script type="text/javascript" src="static/logic.js"></script>
+</html>
